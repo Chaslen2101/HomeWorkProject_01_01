@@ -15,7 +15,7 @@ const generateUniqId = () => {
 export const createVideo = (someVideo:newVideoType) => {
 
     const isVideoValid = videoValidation(someVideo)
-
+    console.log(isVideoValid)
 
     if (isVideoValid) {
 
