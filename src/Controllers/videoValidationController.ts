@@ -122,5 +122,20 @@ export const videoValidation = (someVideo: any) => {
             console.log("Error of minAge exist")
         }
     }
+    if (keysOfNewVideo.find(key => key === "publicationDate")) {
+        const isoDateRegex = /^(\d{4}-\d{2}-\d{2})(T(\d{2}:\d{2}(:\d{2}(\.\d{1,3})?)?Z?)?)?$/;
+        if (typeof someVideo.publicationDate !== "string" || !isoDateRegex.test(someVideo.publicationDate)) {
+
+            const error: OutputErrorType2 = {
+
+                message: "Any<String>",
+                field: "publicationDate"
+
+            }
+
+            db.Errors.errorsMessages.push(error)
+            someErrors = false
+        }
+    }
     return someErrors;
 }
