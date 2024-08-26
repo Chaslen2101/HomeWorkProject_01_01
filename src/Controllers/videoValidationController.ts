@@ -108,7 +108,8 @@ export const videoValidation = (someVideo: any) => {
     }
     if (keysOfNewVideo.find(key => key === "minAgeRestriction")) {
         console.log ("Testing minAgeRestriction to be null or number")
-        if (typeof someVideo.minAgeRestriction !== null && typeof someVideo.minAgeRestriction !== "number") {
+        if (typeof someVideo.minAgeRestriction !== null && typeof someVideo.minAgeRestriction !== "number" && someVideo.minAgeRestriction < 1 && someVideo.minAgeRestriction > 18) {
+
             const error: OutputErrorType2 = {
 
                 message: "Any<String>",
