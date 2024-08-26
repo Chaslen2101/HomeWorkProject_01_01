@@ -19,6 +19,8 @@ export const createVideo = (someVideo:newVideoType) => {
 
     if (isVideoValid) {
 
+        console.log("Creating new video")
+
         // function getRandomBoolean() {
         //     return Math.random() < 0.5;
         // }

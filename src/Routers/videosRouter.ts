@@ -26,7 +26,7 @@ VideosRouter.post("/", (req: Request<{}, {}, newVideoType>, res: Response) => {
     }else {
         res
             .status(httpStatus.BAD_REQUEST_400)
-            .json("Post Request")
+            .json(db.Errors)
         clearErrorData()
 
     }
@@ -57,7 +57,7 @@ VideosRouter.put("/:id", (req: Request, res: Response) => {
     if (UpdatedVideo === "Incorrect Data") {
         res
             .status(httpStatus.BAD_REQUEST_400)
-            .json("Put Request")
+            .json(db.Errors)
         clearErrorData()
     }else if (UpdatedVideo === "Incorrect ID") {
         res
