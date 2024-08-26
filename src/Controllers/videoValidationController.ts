@@ -85,5 +85,27 @@ export const videoValidation = (someVideo: any) => {
         someErrors = false
     }
     console.log("Все проверки пройдены")
+    if(typeof someVideo.canBeDownloaded !== "boolean"){
+        const error: OutputErrorType2 = {
+
+            message: "Any<String>",
+            field: "canBeDownloaded"
+
+        }
+
+        db.Errors.errorsMessages.push(error)
+        someErrors = false
+    }
+    if (typeof someVideo.minAgeRestriction !== null || typeof someVideo.minAgeRestriction !== "number" ) {
+        const error: OutputErrorType2 = {
+
+            message: "Any<String>",
+            field: "minAgeRestriction"
+
+        }
+
+        db.Errors.errorsMessages.push(error)
+        someErrors = false
+    }
     return someErrors;
 }
