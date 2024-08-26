@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "name": "video_manager",
   "builds": [
     {
       "src": "src/index.ts",
-      "use": "@vercel/node"
+      "use": "@vercel/node",
+      "config": { "includeFiles": ["dist/**"] }
     }
   ],
   "routes": [
