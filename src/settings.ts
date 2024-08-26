@@ -14,8 +14,7 @@ app.get('/', (req: Request, res: Response) => {
 
     res
         .status(httpStatus.NO_CONTENT_204)
-        .json("verison_01_01")
-
+        .send("verison_01_01")
 })
 
 

@@ -2,9 +2,9 @@
   "version": 2,
   "name": "videos_manager",
   "builds": [
-    { "src": "src/index.ts", "use": "@vercel/node" }
+    { "src": "src/settings.ts", "use": "@vercel/node" }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "src/index.ts" }
+    { "src": "/(.*)", "dest": "src/settings.ts" }
   ]
 }
