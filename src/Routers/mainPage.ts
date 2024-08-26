@@ -5,6 +5,6 @@ export const mainPageRouter = Router({})
 
 mainPageRouter.get('/', (req: Request, res: Response) => {
     res
-        .status(httpStatus.NO_CONTENT_204)
+        .status(httpStatus.OK_200)
         .json("verison_01_01")
 })

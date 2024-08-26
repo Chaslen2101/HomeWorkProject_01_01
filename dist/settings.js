@@ -11,6 +11,6 @@ const ClearDataBaseRouter_1 = require("./Routers/ClearDataBaseRouter");
 const mainPage_1 = require("./Routers/mainPage");
 exports.app = (0, express_1.default)();
 exports.app.use(body_parser_1.default.json());
-exports.app.use('/hometask_01/api/testing/all-data', ClearDataBaseRouter_1.DBClear);
-exports.app.use('/hometask_01/api/videos', videosRouter_1.VideosRouter);
 exports.app.use('/', mainPage_1.mainPageRouter);
+exports.app.use('/testing/all-data', ClearDataBaseRouter_1.DBClear);
+exports.app.use('/videos', videosRouter_1.VideosRouter);
