@@ -119,6 +119,7 @@ export const videoValidation = (someVideo: any) => {
 
             db.Errors.errorsMessages.push(error)
             someErrors = false
+            console.log("Error of minAge exist")
         }
     }
     return someErrors;
