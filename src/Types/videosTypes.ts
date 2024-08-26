@@ -15,15 +15,18 @@ export type newVideoType = {
     "availableResolutions": string[]
 };
 export type OutputErrorType1 = {
+
     errorsMessages: Array<OutputErrorType2>
 }
 
 export type OutputErrorType2 = {
-        "message": string,
-        "field": string
+        message : string,
+        field: string
 };
 
 export type dbType = {
+
     CurrentExistingVideos: Array<VideoType>,
     Errors: OutputErrorType1
+
 }

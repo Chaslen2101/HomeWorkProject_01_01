@@ -42,5 +42,5 @@ export const createVideo = (someVideo:newVideoType) => {
         }
         db.CurrentExistingVideos.push(newVideo)
         return newVideo
-    }else return false
+    }else return undefined
 }
