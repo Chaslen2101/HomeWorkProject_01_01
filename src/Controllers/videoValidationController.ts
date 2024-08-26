@@ -1,9 +1,11 @@
 import {OutputErrorType2} from "../Types/videosTypes";
 import {db, Resolutions} from "../DB/db";
 
-let someErrors = true
+
 
 export const videoValidation = (someVideo: any) => {
+
+    let someErrors = true
 
     console.log("Проверка видео на наличие")
     if (someVideo === null) {
