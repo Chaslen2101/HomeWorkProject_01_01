@@ -2,7 +2,6 @@ import {Router} from "express";
 import {Request, Response} from "express";
 import {newVideoType, VideoType} from "../Types/videosTypes";
 import {db, httpStatus} from "../DB/db";
-import { ParamsDictionary } from "express-serve-static-core";
 import {findVideoById} from "../Controllers/findVideoById";
 import {UpdateVideo} from "../Controllers/UpdateVideoController";
 import {DeleteVideoController} from "../Controllers/DeleteVideoController";
@@ -22,12 +21,12 @@ VideosRouter.post("/", (req: Request<{}, {}, newVideoType>, res: Response) => {
     const newCreatedVideo = createVideo(req.body)
     if (!newCreatedVideo) {
         res
-            .status(400)
+            .status(httpStatus.BAD_REQUEST_400)
             .json(db.Errors)
         clearErrorData()
     }else {
         res
-            .status(201)
+            .status(httpStatus.CREATED_201)
             .json(newCreatedVideo)
     }
 })
@@ -45,7 +44,7 @@ VideosRouter.get("/:id", (req: Request, res: Response) => {
             .json(yourVideo)
     }else {
         res
-            .status(httpStatus.BAD_REQUEST_400)
+            .status(httpStatus.NOT_FOUND_404)
             .send()
     }
 })
@@ -65,8 +64,8 @@ VideosRouter.put("/:id", (req: Request, res: Response) => {
             .send()
     }else {
         res
-            .status(httpStatus.OK_200)
-            .json(UpdatedVideo)
+            .status(httpStatus.NO_CONTENT_204)
+            .send()
     }
 })
 

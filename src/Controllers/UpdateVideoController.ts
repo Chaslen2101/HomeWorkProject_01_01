@@ -12,12 +12,12 @@ export const UpdateVideo = (newVideo: VideoType, idOfCurrentVideo: number) => {
 
             let hasError = false
             for (const str of keysOfNewVideo) {
-                const NeededKey = keysOfCurrentVideo.find(keys => keys === str);
+                const NeededKey: string | undefined = keysOfCurrentVideo.find(keys => keys === str);
 
-                if (typeof NeededKey === "string") {
+                if (NeededKey) {
                     CurrentVideo[NeededKey] = newVideo[NeededKey];
                 } else {
-                    db.Errors.push({
+                    db.Errors.errorsMessages.push({
                         message: "Error_404. Invalid data",
                         field: `Incorrect key: ${str}`
                     })

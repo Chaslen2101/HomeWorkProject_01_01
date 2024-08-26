@@ -3,7 +3,7 @@ export type VideoType = {
     "title": string,
     "author": string,
     "canBeDownloaded": boolean,
-    "minAgeRestriction": number,
+    "minAgeRestriction": null,
     "createdAt": string,
     "publicationDate": string,
     "availableResolutions": string[]
@@ -14,13 +14,16 @@ export type newVideoType = {
     "author": string,
     "availableResolutions": string[]
 };
+export type OutputErrorType1 = {
+    errorsMessages: Array<OutputErrorType2>
+}
 
-export type OutputErrorType = {
-    "message": string,
-    "field": string
+export type OutputErrorType2 = {
+        "message": string,
+        "field": string
 };
 
 export type dbType = {
     CurrentExistingVideos: Array<VideoType>,
-    Errors: Array<OutputErrorType>
+    Errors: OutputErrorType1
 }

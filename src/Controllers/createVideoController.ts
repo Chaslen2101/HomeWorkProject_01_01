@@ -1,7 +1,7 @@
 import {db} from "../DB/db";
 import {videoValidation} from "./videoValidationController";
 import {newVideoType, VideoType} from "../Types/videosTypes";
-import {findVideoById} from "./findVideoById";
+
 
 const generateUniqId = () => {
     let NewIDofVideo;
@@ -19,11 +19,11 @@ export const createVideo = (someVideo:newVideoType) => {
 
     if (isVideoValid) {
 
-        function getRandomBoolean() {
-            return Math.random() < 0.5;
-        }
+        // function getRandomBoolean() {
+        //     return Math.random() < 0.5;
+        // }
 
-        const ageGeneration: number = Math.floor(Math.random() * 19)
+        // const ageGeneration: number = Math.floor(Math.random() * 19)
         const createdAt = new Date().toISOString()
         const publicationDate = new Date(createdAt)
         publicationDate.setDate(publicationDate.getDate()+1)
@@ -34,8 +34,8 @@ export const createVideo = (someVideo:newVideoType) => {
             "id": generateUniqId(),
             "title": someVideo.title,
             "author": someVideo.author,
-            "canBeDownloaded": getRandomBoolean(),
-            "minAgeRestriction": ageGeneration,
+            "canBeDownloaded": false,
+            "minAgeRestriction": null,
             "createdAt": createdAt,
             "publicationDate": publicationDateString,
             "availableResolutions": someVideo.availableResolutions
