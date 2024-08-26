@@ -24,6 +24,11 @@ export const createVideo = (someVideo:newVideoType) => {
         }
 
         const ageGeneration: number = Math.floor(Math.random() * 19)
+        const createdAt = new Date().toISOString()
+        const publicationDate = new Date(createdAt)
+        publicationDate.setDate(publicationDate.getDate()+1)
+        const publicationDateString = publicationDate.toISOString()
+
 
         const newVideo:VideoType = {
             "id": generateUniqId(),
@@ -31,8 +36,8 @@ export const createVideo = (someVideo:newVideoType) => {
             "author": someVideo.author,
             "canBeDownloaded": getRandomBoolean(),
             "minAgeRestriction": ageGeneration,
-            "createdAt": new Date().toISOString(),
-            "publicationDate": new Date().toISOString(),
+            "createdAt": createdAt,
+            "publicationDate": publicationDateString,
             "availableResolutions": someVideo.availableResolutions
         }
         db.CurrentExistingVideos.push(newVideo)
