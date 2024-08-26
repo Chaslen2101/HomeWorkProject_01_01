@@ -5,6 +5,8 @@
     { "src": "src/settings.ts", "use": "@vercel/node" }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "src/settings.ts" }
+    { "src": "/", "dest": "src/settings.ts" },
+    { "src": "/hometask_01/api/videos", "dest": "src/settings.ts" },
+    { "src": "/hometask_01/api/testing/all-data", "dest": "src/settings.ts" }
   ]
 }
