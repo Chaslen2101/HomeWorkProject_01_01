@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "music-album",
+  "name": "videos_manager",
   "builds": [
     { "src": "src/index.ts", "use": "@vercel/node" }
   ],
