@@ -82,5 +82,6 @@ export const videoValidation = (someVideo: any) => {
         db.Errors.errorsMessages.push(error)
         someErrors = false
     }
+    console.log("Все проверки пройдены")
     return someErrors;
 }
